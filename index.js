@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors)
 
+const port = process.env.PORT || 3000;
+
 const { createClient } = require("@usewaypoint/client");
 const client = createClient(process.env.API_KEY_USERNAME, process.env.API_KEY_PASSWORD);
 
@@ -45,6 +47,6 @@ app.post("/sendemail", async (req, res) => {
     }
   })
 
-app.listen(3000, "0.0.0.0", () => {
+app.listen(port, "0.0.0.0", () => {
     console.log(`Server listening on port 5000`);
 });
