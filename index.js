@@ -45,6 +45,6 @@ app.post("/sendemail", async (req, res) => {
     }
   })
 
-app.listen(5000, () => {
+app.listen(3000, "0.0.0.0", () => {
     console.log(`Server listening on port 5000`);
 });
